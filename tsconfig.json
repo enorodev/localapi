@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "lib": [ "ESNext" ],
+        "target": "ESNext",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "experimentalDecorators": true
+    }
+}
