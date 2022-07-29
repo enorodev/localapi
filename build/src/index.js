@@ -10,4 +10,5 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use('/', RichPresenceController.bind);
 app.use('/', AuthController.bind);
+app.get('/', (req, res) => res.send('ping'));
 server.listen(8080, () => console.log('Started'));
