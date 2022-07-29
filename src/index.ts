@@ -6,7 +6,6 @@ import AuthController from './controllers/auth/index.js';
 
 
 const app = express();
-const server = http.createServer(app);
 
 app.use(cors({ origin: 'https://discord.com' }));
 app.use(express.urlencoded({ extended: false }));
@@ -15,4 +14,4 @@ app.use('/', RichPresenceController.bind);
 app.use('/', AuthController.bind);
 app.get('/', (req, res) => res.send('ping'));
 
-server.listen(3000, () => console.log('Started'));
+app.listen(3000, () => console.log('Started'));
