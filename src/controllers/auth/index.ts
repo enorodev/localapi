@@ -1,8 +1,8 @@
 import url from 'url';
 import 'dotenv/config';
 import axios from "axios";
-import { Controller, Get, Request } from "../../controller";
-import database from '../../../database';
+import { Controller, Get, Request } from "../../controller.js";
+import database from '../../../database.js';
 
 
 export default class AuthController extends Controller {

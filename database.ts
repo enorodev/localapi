@@ -1,6 +1,6 @@
 import * as fs from 'fs';
-import { DatabaseModel } from './src/typing/database';
-import { JsonDatabase } from './src/utils/jsondb';
+import { DatabaseModel } from './src/typing/database.js';
+import { JsonDatabase } from './src/utils/jsondb.js';
 
 
 export default new (

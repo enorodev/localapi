@@ -1,6 +1,6 @@
-import config from "../../../../config";
-import database from "../../../../database";
-import ProfileRenderer, { Sequence } from "../profile";
+import config from "../../../../config.js";
+import database from "../../../../database.js";
+import ProfileRenderer, { Sequence } from "../profile.js";
 
 
 const statusTemplate = (status: string) => {

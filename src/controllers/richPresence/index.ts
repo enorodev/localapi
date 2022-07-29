@@ -1,6 +1,6 @@
-import { Controller, Get, Request } from "../../controller";
-import ProfileRenderer from "./profile";
-import DefaultProfile from './profiles/default';
+import { Controller, Get, Request } from "../../controller.js";
+import ProfileRenderer from "./profile.js";
+import DefaultProfile from './profiles/default.js';
 
 
 export default class RichPresenceController extends Controller {

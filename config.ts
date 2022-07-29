@@ -1,6 +1,6 @@
 import * as fs from 'fs';
-import { ConfigModel } from './src/typing/config';
-import { JsonDatabase } from './src/utils/jsondb';
+import { ConfigModel } from './src/typing/config.js';
+import { JsonDatabase } from './src/utils/jsondb.js';
 
 
 export default new (
