@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx ts-node src/server"
+    "start": "vercel dev",
+    "deploy": "vercel deploy --prod"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.18.1",
     "sequelize": "^6.6.5",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "vercel": "^27.3.3"
   }
 }
