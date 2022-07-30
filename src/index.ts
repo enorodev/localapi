@@ -17,8 +17,4 @@ app.get('/', (req, res) => res.send('ping'));
 
 const server = http.createServer(app);
 
-(async () => {
-    console.log(await axios.get())
-})
-
 server.listen(3000, () => console.log('Started'));
