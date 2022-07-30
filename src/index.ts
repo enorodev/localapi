@@ -1,4 +1,4 @@
-import * as https from 'https';
+import * as http from 'http';
 import * as fs from 'fs';
 import * as path from 'path';
 import express from 'express';
@@ -16,9 +16,6 @@ app.use('/', RichPresenceController.bind);
 app.use('/', AuthController.bind);
 app.get('/', (req, res) => res.send('ping'));
 
-const server = https.createServer({
-    key: fs.readFileSync('cert/key.pem'),
-    cert: fs.readFileSync('cert/cert.pem')
-}, app);
+const server = http.createServer(app);
 
 server.listen(3000, () => console.log('Started'));
