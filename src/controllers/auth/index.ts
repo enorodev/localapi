@@ -48,7 +48,7 @@ export default class AuthController extends Controller {
 
     @Get('/auth/discord/repCounter')
     public static async repCounter(request: Request) {
-        let user = await this.extractDiscordUser(request, 'http://185.188.182.186:3000/auth/discord/repCounter');
+        let user = await this.extractDiscordUser(request, 'https://185.188.182.186:3000/auth/discord/repCounter');
 
         if (user) {
             if (!database.data.authentications.discord.repCounter.includes(user.id)) {
