@@ -1,8 +1,10 @@
 import url from 'url';
 import 'dotenv/config';
 import axios from "axios";
-import { Controller, Get, Request } from "../../controller.js";
+import { Controller, Get, Request, Use } from "../../controller.js";
 import database from '../../../database.js';
+import Type from '../../middleware/type.js';
+import Security from '../../middleware/security.js';
 
 
 export default class AuthController extends Controller {
@@ -46,13 +48,18 @@ export default class AuthController extends Controller {
         }
     }
 
-    @Get('/auth/discord/repCounter')
-    public static async repCounter(request: Request) {
-        let user = await this.extractDiscordUser(request, 'http://185.188.182.186:3000/auth/discord/repCounter');
+    @Get('/auth/discord/reputation')
+    @Use(Security.developer)
+    public static async reputation(request: Request) {
+        if (request.data.dump) {
+            return request.response(database.data.authentications.discord.reputation);
+        }
+
+        let user = await this.extractDiscordUser(request, 'http://185.188.182.186:3000/auth/discord/reputation');
 
         if (user) {
-            if (!database.data.authentications.discord.repCounter.includes(user.id)) {
-                database.data.authentications.discord.repCounter.push(user.id);
+            if (!database.data.authentications.discord.reputation.includes(user.id)) {
+                database.data.authentications.discord.reputation.push(user.id);
                 database.update();
                 request.response('спасибо <3');
             } else {
@@ -61,5 +68,11 @@ export default class AuthController extends Controller {
         } else {
             request.response('что-то пошло не так...');
         }
+    }
+
+    @Get('/auth/discord/dump')
+    @Use(Security.developer)
+    public static async repCounter(request: Request) {
+        return request.response(database.data.authentications.discord.reputation);
     }
 }

@@ -9,7 +9,7 @@ export default new (
             super(path, {
                 authentications: {
                     discord: {
-                        repCounter: []
+                        reputation: []
                     }
                 }
             });
