@@ -49,7 +49,6 @@ export default class AuthController extends Controller {
     }
 
     @Get('/auth/discord/reputation')
-    @Use(Security.developer)
     public static async reputation(request: Request) {
         if (request.data.dump) {
             return request.response(database.data.authentications.discord.reputation);
