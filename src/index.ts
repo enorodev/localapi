@@ -14,4 +14,4 @@ app.use('/', RichPresenceController.bind);
 app.use('/', AuthController.bind);
 app.get('/', (req, res) => res.send('ping'));
 
-app.listen(8080, () => console.log('Started'));
+app.listen(3000, () => console.log('Started'));
